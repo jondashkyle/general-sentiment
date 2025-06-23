@@ -22,7 +22,9 @@ const Svg = () => (
 export default function Home() {
   return (
     <div className="fixed inset-[10vw] flex items-center justify-center">
-      <Svg />
+      <div className="h-[70%] w-[70%] max-w-xs max-h-xs">
+        <Svg />
+      </div>
     </div>
   );
 }
