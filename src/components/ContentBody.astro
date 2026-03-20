@@ -1,0 +1,203 @@
+---
+interface Props {
+  updated?: string | null;
+}
+
+const { updated } = Astro.props;
+const formattedDate = updated
+  ? new Date(updated).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+---
+
+<div class="content">
+  <slot />
+</div>
+{
+  formattedDate && (
+    <footer class="page-footer">Last updated {formattedDate}</footer>
+  )
+}
+
+<script>
+  document.querySelectorAll(".hero").forEach((hero) => {
+    const img = hero.querySelector("img");
+    if (!img) return;
+    const show = () =>
+      requestAnimationFrame(() => hero.classList.add("loaded"));
+    if (img.complete) show();
+    else img.addEventListener("load", show);
+  });
+</script>
+
+<style is:global>
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+    margin: 0 auto;
+    color: var(--color-text);
+  }
+
+  .content > * {
+    max-width: 32rem;
+    width: 100%;
+  }
+
+  .content > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .content > .figure-sm {
+    max-width: 24rem;
+  }
+  .content > .figure-md {
+    max-width: 32rem;
+  }
+  .content > .figure-lg {
+    max-width: 48rem;
+  }
+
+  figure > div {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .content a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-text-secondary);
+    text-underline-offset: 0.25em;
+  }
+
+  .content a.app-icon {
+    text-decoration: none;
+  }
+
+  .content h2 {
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  .content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .content ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+
+  .content ul li + li,
+  .content ol li + li {
+    margin-top: 0.5rem;
+  }
+
+  .content ul li::marker,
+  .content ol li::marker {
+    color: var(--color-text-secondary);
+  }
+
+  .content blockquote {
+    border-left: 1px solid var(--color-text-secondary);
+    padding-left: 1rem;
+  }
+
+  figcaption {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .page-footer {
+    margin-top: 4rem;
+    color: var(--color-text-secondary);
+    max-width: 32rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero {
+    aspect-ratio: 16/9;
+    background-color: #333;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .hero.loaded img {
+    opacity: 1;
+  }
+
+  .content > .hero {
+    max-width: 1280px;
+  }
+
+  .app-icons {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 1;
+  }
+
+  .app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .app-icon-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .app-icon-img svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  .app-icon span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      aspect-ratio: 1/1;
+    }
+  }
+</style>

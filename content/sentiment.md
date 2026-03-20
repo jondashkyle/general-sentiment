@@ -1,21 +1,34 @@
 ---
 title: Sentiment
+updated: '2026-03-20T23:50:36.076Z'
 ---
-**General Sentiment** produces products and projects, from here out referred to as works. Each work shares this sentiment by following three central principles as expressed through values.
+**General Sentiment** produces projects and products for the people. Call these works. Each work follows three central principles.
 
-An individual in possession of a work has the:
+```hero
+image: https://d2w9rnfcy7mm78.cloudfront.net/42424245/original_06add4cf89f9786c5d229f03736f1d4b.jpg?1767732418?bc=0
+App /app
+Browser /browser
+Fence /fence
+```
+
+An individual in possession of a work has the
 
 1. full ownership (forever) over it.
 2. chance to completely customize it.
 3. opportunity to learn from it.
+## Works
 
+1. **[General App](/app)**, a foundation to build using [Shape Source](/shape-source).
+2. **[General Browser](/browser)**, a basic browser of your own.
+
+These works represent values. If you feel them when you use a work, then it’s likely the work is for you, and you should lend it some attention.
 ## Composable
 
-Nothing proprietary. If the work is a chair, bring the chair to your house. If the work is software, bring the app to your data and context. Common materials. [File over app](https://stephango.com/file-over-app).
+Nothing proprietary. If the work is a chair, bring the chair to your house. If the work is software, bring the app to your data and context. Common materials. [Static files](https://stephango.com/file-over-app).
 
 ## Opinionated
 
-Work for everyone is work for no one. Although not intentionally obscured, an opinionated work provokes a response. If it’s one of alignment, great. If it’s one of distaste, customize it.
+A work for everyone is work for no one. Although not intentionally obscured, an opinionated work provokes a response. If it’s one of alignment, great. If it’s one of distaste, customize it.
 
 ## Customizable
 
