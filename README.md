@@ -1,46 +1,35 @@
-# Astro Starter Kit: Basics
+# General Sentiment
+
+Client for [generalsentiment.co](https://generalsentiment.co). Built with Astro.
+
+## Setup
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+cp .env.local.example .env.local
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Set `OBSIDIAN_VAULT` in `.env.local` to the path of your Obsidian vault.
 
-## 🚀 Project Structure
+## Content
 
-Inside of your Astro project, you'll see the following folders and files:
+Content is authored in Obsidian and synced into the `content/` directory. A markdown file is synced when its frontmatter includes:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+- `public: true`
+- `project: "[[General Sentiment]]"`
+
+The sync script copies matching files, slugifies the filename (using a `slug` frontmatter field if present, otherwise the `title`), strips internal fields, and normalizes `[[wiki-links]]` to standard markdown links.
+
+```sh
+npm run sync
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Commands
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Install dependencies                        |
+| `npm run dev`     | Start local dev server at `localhost:4321`   |
+| `npm run build`   | Build production site to `./dist/`           |
+| `npm run preview` | Preview build locally                       |
+| `npm run sync`    | Sync content from Obsidian vault            |

@@ -15,7 +15,11 @@ pnpm-debug.log*
 
 # environment variables
 .env
+.env.local
 .env.production
+
+# synced media from obsidian
+public/media/
 
 # macOS-specific files
 .DS_Store

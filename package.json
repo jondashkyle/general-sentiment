@@ -9,9 +9,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync": "node scripts/obsidian-sync/index.mjs",
+    "sync:watch": "node scripts/obsidian-sync/index.mjs --watch",
+    "sync:media": "node scripts/sync-media.mjs"
   },
   "dependencies": {
-    "astro": "^6.0.7"
+    "@astrojs/mdx": "^5.0.2",
+    "astro": "^6.0.7",
+    "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3"
   }
 }

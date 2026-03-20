@@ -2,23 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 
-const entries = await getCollection("content");
-const entry = entries.find((e) => e.id === "sentiment");
-const rendered = entry ? await render(entry) : null;
-const updated = entry?.data.updated ? new Date(entry.data.updated).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : null;
+export async function getStaticPaths() {
+  const entries = await getCollection("content");
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const updated = entry.data.updated ? new Date(entry.data.updated).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : null;
 ---
 
-<Layout title={entry?.data.title}>
-  {
-    rendered && (
-      <main>
-        <div class="content">
-          <rendered.Content />
-        </div>
-        {updated && <footer class="page-footer">Last updated {updated}</footer>}
-      </main>
-    )
-  }
+<Layout title={entry.data.title}>
+  <main>
+    <div class="content">
+      <Content />
+    </div>
+    {updated && <footer class="page-footer">Last updated {updated}</footer>}
+  </main>
 </Layout>
 
 <style is:global>
