@@ -199,6 +199,13 @@ const formattedDate = updated
     font-family: "Times New Roman", Times, serif;
     font-size: 1.5rem;
     color: #fff;
+    transition: transform 250ms ease;
+  }
+
+  @media (hover: hover) {
+    .app-icon:hover .app-icon-img {
+      transform: scale(1.1);
+    }
   }
 
   .app-icon-img svg {
