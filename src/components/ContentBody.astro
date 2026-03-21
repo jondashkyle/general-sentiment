@@ -31,6 +31,24 @@ const formattedDate = updated
     if (img.complete) show();
     else img.addEventListener("load", show);
   });
+
+  const clock = document.getElementById("clock");
+  function updateClock() {
+    if (!clock) return;
+    const now = new Date();
+    const day = now.toLocaleDateString("en-US", { weekday: "short" });
+    const date = now.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+    const time = now.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+    clock.textContent = `${day} ${date}  ${time}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
 </script>
 
 <style is:global>
@@ -193,6 +211,18 @@ const formattedDate = updated
     font-weight: 500;
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .clock {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.01em;
+    z-index: 2;
   }
 
   @media (max-width: 768px) {

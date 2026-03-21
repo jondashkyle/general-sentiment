@@ -1,6 +1,6 @@
 ---
 title: Sentiment
-updated: '2026-03-20T23:50:36.076Z'
+updated: '2026-03-21T00:10:03.985Z'
 ---
 **General Sentiment** produces projects and products for the people. Call these works. Each work follows three central principles.
 
@@ -19,7 +19,8 @@ An individual in possession of a work has the
 ## Works
 
 1. **[General App](/app)**, a foundation to build using [Shape Source](/shape-source).
-2. **[General Browser](/browser)**, a basic browser of your own.
+2. **[General Browser](/browser)**, a basic fully customizable browser.
+3. **[General Fence](/fence)**, a way to get your hands on the platforms.
 
 These works represent values. If you feel them when you use a work, then it’s likely the work is for you, and you should lend it some attention.
 ## Composable

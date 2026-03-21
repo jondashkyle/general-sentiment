@@ -33,7 +33,7 @@ function buildAppsHtml(apps) {
         `<a href="${href}" class="app-icon"><div class="app-icon-img">${makeIconHtml(name)}</div><span>${name}</span></a>`,
     )
     .join("");
-  return `<div class="app-icons">${icons}</div>`;
+  return `<div class="app-icons"><time class="clock" id="clock"></time>${icons}</div>`;
 }
 
 function buildHeroHtml(text) {
