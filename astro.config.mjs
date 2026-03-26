@@ -8,6 +8,7 @@ import remarkApps from './scripts/remark-apps.mjs';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   integrations: [mdx()],
   markdown: {
     remarkPlugins: [remarkApps],
