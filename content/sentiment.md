@@ -1,8 +1,14 @@
 ---
 title: Sentiment
-updated: '2026-03-25T23:00:48.106Z'
+updated: '2026-03-26T20:50:41.810Z'
 ---
 **General Sentiment** produces heuristics and products for the people. Call these works. Each work follows three central principles.
+
+An individual in possession of a work has the:
+
+1. full ownership (forever) over it.
+2. ability to completely modify it.
+3. opportunity to learn from it.
 
 ```hero
 image: https://d2w9rnfcy7mm78.cloudfront.net/42424245/original_06add4cf89f9786c5d229f03736f1d4b.jpg?1767732418?bc=0
@@ -10,12 +16,6 @@ App /app
 Browser /browser
 Fence /fence
 ```
-
-An individual in possession of a work has the:
-
-1. full ownership (forever) over it.
-2. ability to completely modify it.
-3. opportunity to learn from it.
 ## Works
 
 1. **[General App](/app)**, a foundation for building apps with [Shape Source](/shape-source).
