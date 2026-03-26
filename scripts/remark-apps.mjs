@@ -33,7 +33,7 @@ function buildAppsHtml(apps) {
         `<a href="${href}" class="app-icon"><div class="app-icon-img">${makeIconHtml(name)}</div><span>${name}</span></a>`,
     )
     .join("");
-  return `<div class="app-icons"><time class="clock" id="clock"></time>${icons}</div>`;
+  return `<div class="app-icons"><time class="clock" id="clock"></time><div class="app-icons-grid">${icons}</div></div>`;
 }
 
 function buildHeroHtml(text) {
@@ -49,11 +49,7 @@ function buildHeroHtml(text) {
     }
   }
 
-  const apps = appLines.map((line) => {
-    const parts = line.split(/\s+/);
-    return { name: parts[0], href: parts[1] || `/${parts[0].toLowerCase()}` };
-  });
-
+  const apps = parseAppsBlock(appLines.join("\n"));
   const imgHtml = image ? `<img src="${image}" alt="" />` : "";
   const iconsHtml = apps.length ? buildAppsHtml(apps) : "";
 

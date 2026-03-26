@@ -101,6 +101,10 @@ const formattedDate = updated
     font-weight: 600;
   }
 
+  .content strong {
+    font-weight: 600;
+  }
+
   .content ul {
     list-style: disc;
     padding-left: 1.5rem;
@@ -149,6 +153,19 @@ const formattedDate = updated
     position: relative;
   }
 
+  @media (min-width: 769px) {
+    .hero {
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      aspect-ratio: 1/1;
+    }
+  }
+
   .hero img {
     position: absolute;
     width: 100%;
@@ -175,6 +192,39 @@ const formattedDate = updated
     justify-content: center;
     gap: 1.5rem;
     z-index: 1;
+  }
+
+  .app-icons-grid {
+    display: contents;
+  }
+
+  .app-pill {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: background 250ms ease;
+  }
+
+  .content a.app-pill {
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    .app-pill:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
   }
 
   .app-icon {
@@ -232,9 +282,4 @@ const formattedDate = updated
     z-index: 2;
   }
 
-  @media (max-width: 768px) {
-    .hero {
-      aspect-ratio: 1/1;
-    }
-  }
 </style>
