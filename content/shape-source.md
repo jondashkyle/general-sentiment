@@ -1,6 +1,8 @@
 ---
 title: Shape Source
-updated: '2026-03-20T15:43:39.424Z'
+categories:
+  - '[[Heuristics]]'
+updated: '2026-03-27T19:43:20.764Z'
 ---
 **Shape Source** is a pattern for architecting and shipping software.  It’s centered on benefiting the individual in possession of it.
 

@@ -1,6 +1,8 @@
 ---
 title: Fence
-updated: '2026-03-20T23:24:28.421Z'
+categories:
+  - '[[Projects]]'
+updated: '2026-03-27T19:41:12.090Z'
 ---
 **General Fence** lets you control what platforms show you. Your Fence lets in what you want in, and keeps out what you want out
 
