@@ -1,10 +1,8 @@
 ---
 title: Sentiment
-updated: '2026-03-26T20:50:41.810Z'
+updated: '2026-03-27T19:15:45.356Z'
 ---
-**General Sentiment** produces heuristics and products for the people. Call these works. Each work follows three central principles.
-
-An individual in possession of a work has the:
+**General Sentiment** produces projects and products for the people. Call these works. Each work follows three central principles. An individual in possession of a work has the:
 
 1. full ownership (forever) over it.
 2. ability to completely modify it.
