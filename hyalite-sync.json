@@ -1,0 +1,8 @@
+{
+  "contentDir": "./content",
+  "mediaDir": "./public/media",
+  "filter": {
+    "project": "General Sentiment"
+  },
+  "stripFields": []
+}

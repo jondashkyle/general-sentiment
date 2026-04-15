@@ -1,6 +1,6 @@
 ---
 title: Sentiment
-updated: '2026-03-27T19:15:45.356Z'
+updated: '2026-03-27T20:06:52.600Z'
 ---
 **General Sentiment** produces projects and products for the people. Call these works. Each work follows three central principles. An individual in possession of a work has the:
 
@@ -34,3 +34,7 @@ No dead ends. Want something? Change it. If the work is a chair, sand it down an
 ## Economic
 
 No subscription fatigue. Pay once (if at all) and have full ownership of the work. If the work is a chair, pay once and you now own the chair. If the work is software, pay once and you now own the software. Major releases are new works. This is not transactional, but an exchange of gratitude for something of value.
+
+## Contributors
+
+General Sentiment is directed by [Jon-Kyle Mohr](https://jon-kyle.com) and based out of Los Angeles, California.

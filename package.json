@@ -10,13 +10,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "sync": "node scripts/obsidian-sync/index.mjs",
-    "sync:watch": "node scripts/obsidian-sync/index.mjs --watch",
+    "sync": "hyalite-sync",
+    "sync:watch": "hyalite-sync --watch",
     "sync:media": "node scripts/sync-media.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.2",
     "astro": "^6.0.7",
+    "hyalite-sync": "file:../../hyalite-sync",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
