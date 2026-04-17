@@ -1,10 +1,9 @@
 ---
 title: Fence
 categories:
-  - '[[Projects]]'
-updated: '2026-03-27T19:41:12.090Z'
+  - /projects
 ---
-**General Fence** lets you control what platforms show you. Your Fence lets in what you want in, and keeps out what you want out
+Lets you control what platforms show you. Your Fence lets in what you want in, and keeps out what you want out
 
 We should not be surprised that additive solutions do not solve the tension we feel when using rigid platforms and tools. They are rigid for a purpose. To strictly guide you.
 

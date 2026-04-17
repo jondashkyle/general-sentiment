@@ -18,7 +18,7 @@ const version = release.tag_name;
 
 <Layout title={entry.data.title}>
   <main>
-    <ContentBody updated={entry.data.updated}>
+    <ContentBody updated={entry.data.updated} title={entry.data.title}>
       <Content />
     </ContentBody>
   </main>

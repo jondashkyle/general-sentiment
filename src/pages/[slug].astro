@@ -5,7 +5,7 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const entries = await getCollection("content");
-  return entries.filter((entry) => entry.id !== "browser").map((entry) => ({
+  return entries.filter((entry) => entry.id !== "browser" && entry.id !== "app").map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
   }));
@@ -17,7 +17,7 @@ const { Content } = await render(entry);
 
 <Layout title={entry.data.title}>
   <main>
-    <ContentBody updated={entry.data.updated}>
+    <ContentBody updated={entry.data.updated} title={entry.data.title}>
       <Content />
     </ContentBody>
   </main>

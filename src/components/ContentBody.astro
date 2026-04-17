@@ -1,9 +1,11 @@
 ---
 interface Props {
   updated?: string | null;
+  title?: string;
 }
 
-const { updated } = Astro.props;
+const { updated, title } = Astro.props;
+const isHome = Astro.url.pathname === "/";
 const formattedDate = updated
   ? new Date(updated).toLocaleDateString("en-US", {
       year: "numeric",
@@ -14,6 +16,18 @@ const formattedDate = updated
 ---
 
 <div class="content">
+  <h1 class="page-heading">
+    <a href="/">General</a>{
+      isHome ? (
+        " Sentiment"
+      ) : (
+        <>
+          <span class="sep"> / </span>
+          {title}
+        </>
+      )
+    }
+  </h1>
   <slot />
 </div>
 {
@@ -94,6 +108,21 @@ const formattedDate = updated
 
   .content a.app-icon {
     text-decoration: none;
+  }
+
+  .page-heading {
+    font-size: inherit;
+    font-weight: 600;
+  }
+
+  .content a.page-heading,
+  .page-heading a {
+    text-decoration: none;
+  }
+
+  .page-heading .sep {
+    color: var(--color-text-secondary);
+    font-weight: 400;
   }
 
   .content h2 {

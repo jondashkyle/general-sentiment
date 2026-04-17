@@ -3,17 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import ContentBody from "../components/ContentBody.astro";
 import { getEntry, render } from "astro:content";
 
-const entry = await getEntry("content", "browser");
-if (!entry) throw new Error("Missing content/browser.md");
+const entry = await getEntry("content", "app");
+if (!entry) throw new Error("Missing content/app.md");
 const { Content } = await render(entry);
 
 const res = await fetch(
-  "https://api.github.com/repos/General-Sentiment/Browser/releases/latest",
+  "https://api.github.com/repos/General-Sentiment/app/releases/latest",
 );
 const release = await res.json();
 const dmg = release.assets?.find((a: any) => a.name.endsWith(".dmg"));
 const downloadUrl = dmg?.browser_download_url ?? release.html_url;
-const version = release.tag_name;
 ---
 
 <Layout title={entry.data.title}>
@@ -22,7 +21,7 @@ const version = release.tag_name;
       <Content />
     </ContentBody>
   </main>
-  <a class="download-btn" href={downloadUrl}>Download for Mac ({version})</a>
+  <a class="download-btn" href={downloadUrl}>Download for Mac</a>
 </Layout>
 
 <style is:global>

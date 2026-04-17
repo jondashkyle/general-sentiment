@@ -1,8 +1,7 @@
 ---
 title: Software
 contributors:
-  - '[[Jon-Kyle]]'
-updated: '2026-03-27T19:29:59.033Z'
+  - /jon-kyle
 ---
 
 - Shape source

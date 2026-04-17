@@ -12,7 +12,7 @@ const rendered = entry ? await render(entry) : null;
   {
     rendered && (
       <main>
-        <ContentBody updated={entry?.data.updated}>
+        <ContentBody updated={entry?.data.updated} title={entry?.data.title}>
           <rendered.Content />
         </ContentBody>
       </main>

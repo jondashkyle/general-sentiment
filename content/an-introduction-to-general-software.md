@@ -1,7 +1,6 @@
 ---
 title: An introduction to General Software
 created: 2026-03-20T00:00:00.000Z
-updated: '2026-03-21T00:57:55.784Z'
 ---
 Introducing General Sentiment.
 
