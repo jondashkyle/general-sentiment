@@ -9,9 +9,13 @@ Produces projects and products for the people. These are the works. Each work fo
 
 ```hero
 image: https://d2w9rnfcy7mm78.cloudfront.net/42424245/original_06add4cf89f9786c5d229f03736f1d4b.jpg?1767732418?bc=0
-App /app
-Browser /browser
-Fence /fence
+apps:
+  - name: App
+    href: /app
+  - name: Browser
+    href: /browser
+  - name: Fence
+    href: "@"
 ```
 ### Works
 
