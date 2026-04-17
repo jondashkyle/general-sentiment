@@ -13,24 +13,24 @@ App /app
 Browser /browser
 Fence /fence
 ```
-## Works
+### Works
 
 1. **[General App](/app)**, a foundation for building apps with [Shape Source](/shape-source).
 2. **[General Browser](/browser)**, a fully modifiable minimalist browser.
 3. **[General Fence](/fence)**, a way to get your hands on the platforms.
 
-## Composable
+### Composable
 
 You own your data. You bring apps to it. [Static files](https://stephango.com/file-over-app), not databases. Plain text decorated with markdown and front-matter. Flat taxonomy. You know the drill.
 
-## Modifiable
+### Modifiable
 
 No dead ends. Want something? Modify it. Unsure how? All software is documented for both human and agentic legibility. This pattern is [Shape Source](/shape-source), an evolution of view/open source.
 
-## Economic
+### Economic
 
 No subscriptions. Pay once (if at all) for full ownership of the work. Major releases are new works, and occur perhaps once a year.
 
-## Contributors
+### Contributors
 
 Directed by [Jon-Kyle](https://jon-kyle.com), based out of Los Angeles, California.
