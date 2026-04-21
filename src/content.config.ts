@@ -7,6 +7,8 @@ const content = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		updated: z.string().optional(),
+		repository: z.string().url().optional(),
+		contributors: z.union([z.string(), z.array(z.string())]).optional(),
 	}),
 });
 

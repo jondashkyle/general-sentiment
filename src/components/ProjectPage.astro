@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContentBody from "./ContentBody.astro";
+import { getEntry, render } from "astro:content";
+import releasesData from "../data/releases.json";
+import contributorsData from "../data/contributors.json";
+
+interface Props {
+  slug: string;
+  repo: string;
+}
+
+const { slug, repo } = Astro.props;
+
+const entry = await getEntry("content", slug);
+if (!entry) throw new Error(`Missing content/${slug}.md`);
+const { Content } = await render(entry);
+const { repository } = entry.data;
+
+const contributorSlugs = Array.isArray(entry.data.contributors)
+  ? entry.data.contributors
+  : entry.data.contributors
+    ? [entry.data.contributors]
+    : [];
+const contributors = contributorSlugs
+  .map(
+    (s) =>
+      (contributorsData as Record<string, { name: string; url: string }>)[s],
+  )
+  .filter(Boolean);
+
+type Release = { tag: string; url: string; date: string };
+type RepoData = { downloadUrl: string; releases: Release[] };
+
+const { downloadUrl, releases: rawReleases } = (releasesData as Record<
+  string,
+  RepoData
+>)[repo];
+const releases = rawReleases.map((r) => ({
+  tag: r.tag,
+  url: r.url,
+  date: r.date ? r.date.slice(0, 10) : "",
+}));
+
+const repositoryHost = repository ? new URL(repository).hostname : "";
+const hasDetails = Boolean(repository) || contributors.length > 0;
+---
+
+<Layout title={entry.data.title}>
+  <main>
+    <ContentBody updated={entry.data.updated} title={entry.data.title}>
+      <p class="download">
+        <a class="download-btn" href={downloadUrl}>Download for Mac</a>
+      </p>
+      <Content />
+      {
+        hasDetails && (
+          <>
+            <h2>Details</h2>
+            <div class="meta-table">
+              <table>
+                <tbody>
+                  {repository && (
+                    <tr>
+                      <td>Repository</td>
+                      <td>
+                        <a href={repository}>{repositoryHost}</a>
+                      </td>
+                    </tr>
+                  )}
+                  {contributors.length > 0 && (
+                    <tr>
+                      <td>Contributors</td>
+                      <td>
+                        {contributors.map((c, i) => (
+                          <>
+                            {i > 0 && ", "}
+                            <a href={c.url} target="_blank" rel="noopener noreferrer">
+                              {c.name}
+                            </a>
+                          </>
+                        ))}
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </>
+        )
+      }
+      {
+        releases.length > 0 && (
+          <>
+            <h2>Releases</h2>
+            <div class="meta-table">
+              <table>
+                <tbody>
+                  {releases.map((r) => (
+                    <tr>
+                      <td>
+                        <a href={r.url}>{r.tag}</a>
+                      </td>
+                      <td>{r.date}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p class="all-releases">
+                <a href={`https://github.com/${repo}/releases`}>
+                  View All Releases
+                </a>
+              </p>
+            </div>
+          </>
+        )
+      }
+    </ContentBody>
+  </main>
+</Layout>
+
+<style is:global>
+  main {
+    padding: 8rem 2rem;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 6rem 1rem 1rem;
+    }
+  }
+
+  .meta-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .meta-table td {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: baseline;
+  }
+
+  .meta-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .meta-table td + td {
+    text-align: right;
+    color: var(--color-text-secondary);
+  }
+
+  .meta-table > p {
+    margin-top: 1rem;
+  }
+
+  .meta-table .all-releases a {
+    color: var(--color-text-secondary);
+  }
+
+  .content a.download-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 250ms ease;
+  }
+
+  .content a.download-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+</style>

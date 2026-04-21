@@ -21,7 +21,7 @@ apps:
 ```
 ### Works
 
-1. **[General App](/app)**, a foundation for building apps with [Shape Source](/shape-source).
+1. **[General App](/app)**, a foundation for building apps with [shape source](/shape-source).
 2. **[General Browser](/browser)**, a fully modifiable ultralight browser.
 3. **[General Fence](/fence)**, a way to get your hands on the platforms.
 
@@ -31,7 +31,7 @@ You own your data. You bring apps to it. [Static files](https://stephango.com/fi
 
 ### Modifiable
 
-No dead ends. Want something? Modify it. Unsure how? All software is documented for both human and agentic legibility. This pattern is [Shape Source](/shape-source), an evolution of view/open source.
+No dead ends. Want something? Modify it. Unsure how? All software is documented for both human and agentic legibility. This pattern is [shape source](/shape-source), an evolution of view/open source.
 
 ### Economic
 
@@ -39,4 +39,4 @@ No subscriptions. Pay once (if at all) for full ownership of the work. Major rel
 
 ### Contributors
 
-Directed by [Jon-Kyle](https://jon-kyle.com), based out of Los Angeles, California.
+Directed by [Jon-Kyle](https://jon-kyle.com). Based out of Los Angeles, California.
