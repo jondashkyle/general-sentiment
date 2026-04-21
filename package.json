@@ -12,7 +12,8 @@
     "astro": "astro",
     "sync": "hyalite-sync",
     "sync:watch": "hyalite-sync --watch",
-    "sync:media": "node scripts/sync-media.mjs"
+    "sync:media": "node scripts/sync-media.mjs",
+    "sync:releases": "node scripts/fetch-releases.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.2",

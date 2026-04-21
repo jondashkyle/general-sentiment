@@ -1,0 +1,35 @@
+{
+  "General-Sentiment/Browser": {
+    "downloadUrl": "https://github.com/General-Sentiment/browser/releases/download/v0.0.5/Browser-0.0.5-universal.dmg",
+    "releases": [
+      {
+        "tag": "v0.0.5",
+        "date": "2026-04-20T23:59:44Z",
+        "url": "https://github.com/General-Sentiment/browser/releases/tag/v0.0.5"
+      },
+      {
+        "tag": "v0.0.4",
+        "date": "2026-04-16T22:08:09Z",
+        "url": "https://github.com/General-Sentiment/browser/releases/tag/v0.0.4"
+      },
+      {
+        "tag": "v0.0.3",
+        "date": "2026-04-15T17:28:57Z",
+        "url": "https://github.com/General-Sentiment/browser/releases/tag/v0.0.3"
+      },
+      {
+        "tag": "v0.0.2",
+        "date": "2026-03-26T06:57:23Z",
+        "url": "https://github.com/General-Sentiment/browser/releases/tag/v0.0.2"
+      }
+    ]
+  },
+  "General-Sentiment/Fence": {
+    "downloadUrl": "https://github.com/General-Sentiment/Fence/releases/latest",
+    "releases": []
+  },
+  "General-Sentiment/app": {
+    "downloadUrl": "https://github.com/General-Sentiment/app/releases/latest",
+    "releases": []
+  }
+}

@@ -1,7 +1,9 @@
 ---
 title: Sentiment
 ---
-Produces projects and products for the people. These are the works. Each work follows three central principles. An individual in possession of a work has the:
+Produces ideas, projects, and products for the people. The are works. Each work follows three central principles.
+
+An individual in possession of a work has the:
 
 1. full ownership of it.
 2. ability to modify it.
@@ -15,17 +17,17 @@ apps:
   - name: Browser
     href: /browser
   - name: Fence
-    href: "@"
+    href: /fence
 ```
 ### Works
 
 1. **[General App](/app)**, a foundation for building apps with [Shape Source](/shape-source).
-2. **[General Browser](/browser)**, a fully modifiable minimalist browser.
+2. **[General Browser](/browser)**, a fully modifiable ultralight browser.
 3. **[General Fence](/fence)**, a way to get your hands on the platforms.
 
 ### Composable
 
-You own your data. You bring apps to it. [Static files](https://stephango.com/file-over-app), not databases. Plain text decorated with markdown and front-matter. Flat taxonomy. You know the drill.
+You own your data. You bring apps to it. [Static files](https://stephango.com/file-over-app), not databases. Plain text decorated with markdown and front-matter. Flat taxonomy.
 
 ### Modifiable
 

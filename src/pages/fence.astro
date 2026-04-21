@@ -2,27 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import ContentBody from "../components/ContentBody.astro";
 import { getEntry, render } from "astro:content";
+import releasesData from "../data/releases.json";
 
 const entry = await getEntry("content", "fence");
 if (!entry) throw new Error("Missing content/fence.md");
 const { Content } = await render(entry);
 
-const res = await fetch(
-  "https://api.github.com/repos/General-Sentiment/Fence/releases/latest",
-);
-const release = await res.json();
-const dmg = release.assets?.find((a: any) => a.name.endsWith(".dmg"));
-const downloadUrl = dmg?.browser_download_url ?? release.html_url;
-const version = release.tag_name;
+type Release = { tag: string; url: string; date: string };
+type RepoData = { downloadUrl: string; releases: Release[] };
+
+const { downloadUrl } = (releasesData as Record<string, RepoData>)[
+  "General-Sentiment/Fence"
+];
 ---
 
 <Layout title={entry.data.title}>
   <main>
     <ContentBody updated={entry.data.updated} title={entry.data.title}>
+      <p class="download"><a class="download-btn" href={downloadUrl}>Download for Mac</a></p>
       <Content />
     </ContentBody>
   </main>
-  <a class="download-btn" href={downloadUrl}>Download for Mac ({version})</a>
 </Layout>
 
 <style is:global>
@@ -35,13 +35,9 @@ const version = release.tag_name;
       padding: 6rem 1rem 1rem;
     }
   }
-</style>
 
-<style>
-  .download-btn {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
+  .content a.download-btn {
+    display: inline-block;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -53,10 +49,9 @@ const version = release.tag_name;
     border-radius: 999px;
     text-decoration: none;
     transition: background 250ms ease;
-    z-index: 10;
   }
 
-  .download-btn:hover {
+  .content a.download-btn:hover {
     background: rgba(255, 255, 255, 0.2);
   }
 </style>
