@@ -8,9 +8,10 @@ import contributorsData from "../data/contributors.json";
 interface Props {
   slug: string;
   repo: string;
+  downloadLabel?: string;
 }
 
-const { slug, repo } = Astro.props;
+const { slug, repo, downloadLabel = "Download for Mac" } = Astro.props;
 
 const entry = await getEntry("content", slug);
 if (!entry) throw new Error(`Missing content/${slug}.md`);
@@ -50,7 +51,7 @@ const hasDetails = Boolean(repository) || contributors.length > 0;
   <main>
     <ContentBody updated={entry.data.updated} title={entry.data.title}>
       <p class="download">
-        <a class="download-btn" href={downloadUrl}>Download for Mac</a>
+        <a class="download-btn" href={downloadUrl}>{downloadLabel}</a>
       </p>
       <Content />
       {

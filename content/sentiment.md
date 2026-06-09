@@ -1,9 +1,7 @@
 ---
 title: Sentiment
 ---
-Produces ideas, projects, and products for the people. The are works. Each work follows three central principles.
-
-An individual in possession of a work has the:
+Produces heuristics, projects, and products following three central principles. An individual in possession of a work has the:
 
 1. full ownership of it.
 2. ability to modify it.
@@ -18,12 +16,15 @@ apps:
     href: /browser
   - name: Fence
     href: /fence
+  - name: Word Tree
+    href: /word-tree
 ```
 ### Works
 
 1. **[General App](/app)**, a foundation for building apps with [shape source](/shape-source).
 2. **[General Browser](/browser)**, a fully modifiable ultralight browser.
 3. **[General Fence](/fence)**, a way to get your hands on the platforms.
+4. **[Word Tree](/word-tree)**, a way to see the habits in your writing.
 
 ### Composable
 

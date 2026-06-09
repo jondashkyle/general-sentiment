@@ -5,6 +5,7 @@ const REPOS = [
   "General-Sentiment/Browser",
   "General-Sentiment/Fence",
   "General-Sentiment/app",
+  "General-Sentiment/obsidian-word-tree",
 ];
 
 const OUT = "src/data/releases.json";
