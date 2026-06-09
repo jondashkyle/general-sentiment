@@ -24,7 +24,7 @@ apps:
 1. **[General App](/app)**, a foundation for building apps with [shape source](/shape-source).
 2. **[General Browser](/browser)**, a fully modifiable ultralight browser.
 3. **[General Fence](/fence)**, a way to get your hands on the platforms.
-4. **[Word Tree](/word-tree)**, a way to see the habits in your writing.
+4. **[Word Tree](/word-tree)**, follow the pathways in your writing.
 
 ### Composable
 
